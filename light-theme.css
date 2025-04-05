@@ -1,19 +1,23 @@
 /* light-theme.css */
 
 :root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --accent-color: #3366ff;
-  --bg-alt: #f1f1f1;
+  --bg-color: #f7f9fc;
+  --text-color: #1a1a1a;
+  --accent-color: #3f51b5;
+  --accent-color-hover: #303f9f;
+  --bg-alt: #ffffff;
   --box-color: #ffffff;
-  --box-shadow: rgba(0, 0, 0, 0.1);
-  --separator: #dddddd;
-  --muted-text: #555555;
+  --box-shadow: rgba(0, 0, 0, 0.08);
+  --separator: #e0e0e0;
+  --muted-text: #555;
+  --highlight: #ffca28;
 }
 
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sidebar,
@@ -28,11 +32,18 @@ article,
 .form-btn {
   background-color: var(--box-color) !important;
   color: var(--text-color) !important;
-  box-shadow: 0 4px 20px var(--box-shadow) !important;
+  box-shadow: 0 8px 30px var(--box-shadow) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .separator {
   background-color: var(--separator) !important;
+}
+
+.navbar {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid var(--separator);
 }
 
 .navbar-link,
@@ -47,19 +58,41 @@ article,
 .navbar-link.active,
 .theme-toggle {
   color: var(--accent-color) !important;
+  font-weight: 600;
+}
+
+.navbar-link:hover {
+  color: var(--accent-color-hover) !important;
 }
 
 .theme-toggle {
-  background-color: var(--bg-alt);
-  padding: 8px 14px;
+  background-color: var(--highlight);
+  color: var(--text-color);
+  padding: 10px 16px;
   border-radius: 8px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   margin-top: 12px;
-  border: 1px solid var(--separator);
+  border: none;
+  box-shadow: 0 2px 10px var(--box-shadow);
   transition: background 0.3s;
 }
 
 .theme-toggle:hover {
-  background-color: var(--separator);
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+a.contact-link:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.avatar-box img {
+  border: 3px solid var(--highlight);
+  border-radius: 50%;
+}
+
+.article-title::after {
+  background: var(--accent-color);
 }

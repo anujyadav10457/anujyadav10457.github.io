@@ -1,98 +1,118 @@
-/* light-theme.css */
+/*-----------------------------------*\
+  #light-theme.css
+\*-----------------------------------*/
 
 :root {
-  --bg-color: #f7f9fc;
-  --text-color: #1a1a1a;
-  --accent-color: #3f51b5;
-  --accent-color-hover: #303f9f;
-  --bg-alt: #ffffff;
-  --box-color: #ffffff;
-  --box-shadow: rgba(0, 0, 0, 0.08);
-  --separator: #e0e0e0;
-  --muted-text: #555;
-  --highlight: #ffca28;
+  --bg-gradient-onyx: linear-gradient(to bottom right, hsl(220, 100%, 95%) 3%, hsl(220, 100%, 98%) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right, hsla(220, 100%, 98%, 0.3) 0%, hsla(220, 100%, 100%, 0) 100%), hsl(220, 100%, 98%);
+  --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(45, 100%, 65%) 0%, hsla(36, 100%, 69%, 0) 50%);
+  --bg-gradient-yellow-2: linear-gradient(135deg, hsla(45, 100%, 65%, 0.251) 0%, hsla(35, 100%, 68%, 0) 59.86%), hsl(220, 100%, 98%);
+  --border-gradient-onyx: linear-gradient(to bottom right, hsl(220, 15%, 75%) 0%, hsla(220, 15%, 75%, 0) 50%);
+  --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 60%), hsl(35, 100%, 55%));
+
+  --jet: hsl(220, 10%, 70%);
+  --onyx: hsl(220, 10%, 85%);
+  --eerie-black-1: hsl(220, 10%, 97%);
+  --eerie-black-2: hsl(220, 10%, 95%);
+  --smoky-black: hsl(0, 0%, 100%);
+  --white-1: hsl(0, 0%, 10%);
+  --white-2: hsl(0, 0%, 20%);
+  --orange-yellow-crayola: hsl(45, 100%, 55%);
+  --vegas-gold: hsl(45, 80%, 45%);
+  --light-gray: hsl(0, 0%, 30%);
+  --light-gray-70: hsla(0, 0%, 30%, 0.7);
+  --bittersweet-shimmer: hsl(0, 75%, 55%);
+
+  --ff-poppins: 'Poppins', sans-serif;
+
+  --fs-1: 24px;
+  --fs-2: 18px;
+  --fs-3: 17px;
+  --fs-4: 16px;
+  --fs-5: 15px;
+  --fs-6: 14px;
+  --fs-7: 13px;
+  --fs-8: 11px;
+
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.05);
+  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.07);
+  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.07);
+  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.05);
+  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.07);
+
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease-in-out;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: 'Poppins', sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--eerie-black-2);
+  color: var(--white-2);
 }
 
 .sidebar,
-article,
-.navbar,
-.content-card,
-.filter-select,
-.select-list,
-.project-img,
-.contact-form,
-.form-input,
-.form-btn {
-  background-color: var(--box-color) !important;
-  color: var(--text-color) !important;
-  box-shadow: 0 8px 30px var(--box-shadow) !important;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.separator {
-  background-color: var(--separator) !important;
+article {
+  background: var(--eerie-black-1);
+  border: 1px solid var(--jet);
+  box-shadow: var(--shadow-1);
 }
 
 .navbar {
-  backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.9);
-  border-top: 1px solid var(--separator);
+  background: hsla(220, 15%, 85%, 0.85);
+  backdrop-filter: blur(10px);
+  border-color: var(--jet);
+  box-shadow: var(--shadow-2);
 }
 
-.navbar-link,
-.contact-title,
-.contact-info a,
-.about-text,
-.blog-text,
-.project-category {
-  color: var(--muted-text) !important;
+.navbar-link {
+  color: var(--light-gray);
 }
 
-.navbar-link.active,
-.theme-toggle {
-  color: var(--accent-color) !important;
-  font-weight: 600;
+.navbar-link.active {
+  color: var(--orange-yellow-crayola);
 }
 
-.navbar-link:hover {
-  color: var(--accent-color-hover) !important;
+.icon-box {
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
 }
 
-.theme-toggle {
-  background-color: var(--highlight);
-  color: var(--text-color);
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 12px;
-  border: none;
-  box-shadow: 0 2px 10px var(--box-shadow);
-  transition: background 0.3s;
+input, textarea, .form-input {
+  background: white;
+  color: black;
+  border: 1px solid var(--jet);
 }
 
-.theme-toggle:hover {
-  background-color: var(--accent-color);
-  color: #fff;
+.form-btn {
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
 }
 
-a.contact-link:hover {
-  color: var(--accent-color);
-  text-decoration: underline;
+.form-btn:hover {
+  background: var(--bg-gradient-yellow-1);
 }
 
-.avatar-box img {
-  border: 3px solid var(--highlight);
-  border-radius: 50%;
+.form-btn:hover::before {
+  background: var(--bg-gradient-yellow-2);
 }
 
-.article-title::after {
-  background: var(--accent-color);
+.project-img::before,
+.blog-banner-box img,
+.clients-item img {
+  filter: brightness(1);
 }
+
+.separator {
+  background: var(--jet);
+}
+
+::selection {
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+}
+
+/* Add additional element-specific overrides as needed for full light theme support */

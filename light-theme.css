@@ -1,0 +1,65 @@
+/* light-theme.css */
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #3366ff;
+  --bg-alt: #f1f1f1;
+  --box-color: #ffffff;
+  --box-shadow: rgba(0, 0, 0, 0.1);
+  --separator: #dddddd;
+  --muted-text: #555555;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.sidebar,
+article,
+.navbar,
+.content-card,
+.filter-select,
+.select-list,
+.project-img,
+.contact-form,
+.form-input,
+.form-btn {
+  background-color: var(--box-color) !important;
+  color: var(--text-color) !important;
+  box-shadow: 0 4px 20px var(--box-shadow) !important;
+}
+
+.separator {
+  background-color: var(--separator) !important;
+}
+
+.navbar-link,
+.contact-title,
+.contact-info a,
+.about-text,
+.blog-text,
+.project-category {
+  color: var(--muted-text) !important;
+}
+
+.navbar-link.active,
+.theme-toggle {
+  color: var(--accent-color) !important;
+}
+
+.theme-toggle {
+  background-color: var(--bg-alt);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 12px;
+  border: 1px solid var(--separator);
+  transition: background 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--separator);
+}

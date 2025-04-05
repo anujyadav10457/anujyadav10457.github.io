@@ -7,6 +7,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="light-theme.css" id="light-theme" disabled />
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon" />
 
   <!-- Fonts -->
@@ -56,6 +57,8 @@
           <li class="social-item"><a href="#" class="social-link"><ion-icon name="logo-github"></ion-icon></a></li>
           <li class="social-item"><a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
         </ul>
+        <div class="separator"></div>
+        <button id="theme-toggle" class="theme-toggle">Toggle Light/Dark Theme</button>
       </div>
     </aside>
 
@@ -95,6 +98,12 @@
   </main>
 
   <!-- JS & ICONS -->
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const lightTheme = document.getElementById('light-theme');
+      lightTheme.disabled = !lightTheme.disabled;
+    });
+  </script>
   <script src="script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
